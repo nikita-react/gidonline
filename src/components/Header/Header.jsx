@@ -8,7 +8,7 @@ import {
   HeaderLinksWrapper,
   HeaderLinkLine,
 } from './styled';
-import Button from '../Button';
+import { Button } from '../styled';
 import logo from '../../images/gidonline.png';
 
 export default function Header() {
@@ -25,7 +25,9 @@ export default function Header() {
           backgroundColor={'#333'}
           title={'Поиск'}
           fontSize={'13px'}
-        />
+        >
+          Поиск
+        </Button>
         <HeaderLinksWrapper>
           <HeaderLink>Новинки</HeaderLink>
           <HeaderLinkLine>|</HeaderLinkLine>
@@ -39,4 +41,3 @@ export default function Header() {
     </HeaderWrapper>
   );
 }
-//new change

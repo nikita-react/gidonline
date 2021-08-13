@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const Button = styled.button`
+export const Button = styled.button`
   width: ${(props) => props.width};
   height: ${(props) => props.height};
   color: #fff;
@@ -15,4 +16,5 @@ const Button = styled.button`
     color: #ddd;
   }
 `;
-export default Button;
+
+export const LinkStyled = styled(Link)``;
