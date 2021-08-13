@@ -1,0 +1,51 @@
+import styled from 'styled-components';
+
+export const HeaderWrapper = styled.div`
+  height: 100px;
+  padding: 0 100px 0 66px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+export const HeaderImg = styled.img``;
+export const HeaderLink = styled.a`
+  display: inline-block;
+  padding: 0px 3px;
+  color: #aaa;
+  :hover {
+    color: #ccc;
+  }
+`;
+export const HeaderSearchWrapper = styled.div``;
+export const HeaderSearch = styled.input`
+  outline: none;
+  background-color: #080808;
+  color: #ddd;
+  border: 2px solid #333;
+  border-right: 1px solid #333;
+  height: 25px;
+  width: 330px;
+  opacity: 0.5;
+  font-size: 12px;
+  padding-left: 7px;
+  margin-right: 2px;
+  transition: all 0.3s;
+  ::placeholder {
+    color: #ddd;
+  }
+
+  :hover {
+    border: 2px solid #484848;
+    border-right: 1px solid #484848;
+    color: #888;
+    ::placeholder {
+      color: #888;
+    }
+  }
+`;
+export const HeaderLinksWrapper = styled.div`
+  padding: 5px 0 0 10px;
+`;
+export const HeaderLinkLine = styled.span`
+  opacity: 0.4;
+`;
