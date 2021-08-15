@@ -6,17 +6,16 @@ import {
   HeaderSearchWrapper,
   HeaderSearch,
   HeaderLinksWrapper,
-  HeaderLinkLine,
 } from './styled';
-import { Button } from '../styled';
+import { Button, LinkStyled } from '../styled';
 import logo from '../../images/gidonline.png';
-
+import routes from '../../constants';
 export default function Header() {
   return (
     <HeaderWrapper>
-      <HeaderLink>
+      <LinkStyled to={routes.gidonline}>
         <HeaderImg src={logo} alt={'logo'} />
-      </HeaderLink>
+      </LinkStyled>
       <HeaderSearchWrapper>
         <HeaderSearch placeholder={'Название фильма...'} />
         <Button
@@ -29,13 +28,10 @@ export default function Header() {
           Поиск
         </Button>
         <HeaderLinksWrapper>
-          <HeaderLink>Новинки</HeaderLink>
-          <HeaderLinkLine>|</HeaderLinkLine>
-          <HeaderLink>Премьеры</HeaderLink>
-          <HeaderLinkLine>|</HeaderLinkLine>
-          <HeaderLink>Навигатор</HeaderLink>
-          <HeaderLinkLine>|</HeaderLinkLine>
-          <HeaderLink>Случайный</HeaderLink>
+          <HeaderLink to={routes.new}>Новинки</HeaderLink>
+          <HeaderLink to={routes.premieres}>Премьеры</HeaderLink>
+          <HeaderLink to={routes.navigator}>Навигатор</HeaderLink>
+          <HeaderLink to={routes.random}>Случайный</HeaderLink>
         </HeaderLinksWrapper>
       </HeaderSearchWrapper>
     </HeaderWrapper>

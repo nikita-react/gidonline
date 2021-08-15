@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const HeaderWrapper = styled.div`
   height: 100px;
@@ -8,12 +9,20 @@ export const HeaderWrapper = styled.div`
   align-items: center;
 `;
 export const HeaderImg = styled.img``;
-export const HeaderLink = styled.a`
+export const HeaderLink = styled(Link)`
   display: inline-block;
   padding: 0px 3px;
   color: #aaa;
   :hover {
     color: #ccc;
+  }
+  ::after {
+    content: '|';
+    opacity: 0.4;
+    padding-left: 3px;
+  }
+  :last-child::after {
+    display: none;
   }
 `;
 export const HeaderSearchWrapper = styled.div``;
@@ -45,7 +54,4 @@ export const HeaderSearch = styled.input`
 `;
 export const HeaderLinksWrapper = styled.div`
   padding: 5px 0 0 10px;
-`;
-export const HeaderLinkLine = styled.span`
-  opacity: 0.4;
 `;

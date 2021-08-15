@@ -1,6 +1,10 @@
 const routes = {
   gidonline: '/',
-  genre: '/gidonline/genre',
-  movie: '/gidonline/movie',
+  genre: '/genre',
+  movie: '/movie',
+  new: '/new',
+  premieres: '/premieres',
+  navigator: '/navigator',
+  random: '/random',
 };
 export default routes;

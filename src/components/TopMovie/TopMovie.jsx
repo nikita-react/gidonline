@@ -1,9 +1,16 @@
 import React from 'react';
 import MovieCard from '../MovieCard';
+import { TopMovieWrapper } from './styled';
 export default function TopMovie() {
   return (
-    <div>
+    <TopMovieWrapper>
       <MovieCard />
-    </div>
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
+      <MovieCard />
+    </TopMovieWrapper>
   );
 }

@@ -11,6 +11,7 @@ export const Button = styled.button`
   font-size: ${(props) => props.fontSize};
   transition: opacity 0.3s;
   background-color: ${(props) => props.backgroundColor};
+  cursor: pointer;
   :hover {
     opacity: 0.8;
     color: #ddd;
