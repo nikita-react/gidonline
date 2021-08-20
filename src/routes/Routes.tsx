@@ -4,7 +4,7 @@ import routes from '../constants';
 import App from '../components/App';
 import Container from '../components/Container';
 
-export default function Routes() {
+const Routes: React.FC = () => {
   return (
     <BrowserRouter>
       <Switch>
@@ -20,4 +20,5 @@ export default function Routes() {
       </Switch>
     </BrowserRouter>
   );
-}
+};
+export default Routes;

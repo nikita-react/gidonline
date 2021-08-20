@@ -10,7 +10,8 @@ import {
 import { Button, LinkStyled } from '../styled';
 import logo from '../../images/gidonline.png';
 import routes from '../../constants';
-export default function Header() {
+
+const Header: React.FC = () => {
   return (
     <HeaderWrapper>
       <LinkStyled to={routes.gidonline}>
@@ -36,4 +37,6 @@ export default function Header() {
       </HeaderSearchWrapper>
     </HeaderWrapper>
   );
-}
+};
+
+export default Header;

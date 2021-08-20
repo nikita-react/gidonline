@@ -1,10 +1,15 @@
 import { MOVIES_REQUEST, MOVIES_SUCCESS, MOVIES_ERROR } from './constant';
+import { MovieActionTypes, Payload } from './types';
 
-const reducerState = {
+interface MovieState {
+  movies: Payload[];
+}
+
+const reducerState: MovieState = {
   movies: [],
 };
 
-const movieReducer = (state = reducerState, action) => {
+const movieReducer = (state = reducerState, action: MovieActionTypes) => {
   const { type, payload } = action;
 
   switch (type) {

@@ -1,3 +1,0 @@
-export const MOVIES_REQUEST = 'MOVIES_REQUEST';
-export const MOVIES_SUCCESS = 'MOVIES_SUCCESS';
-export const MOVIES_ERROR = 'MOVIES_ERROR';
