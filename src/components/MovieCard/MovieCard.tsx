@@ -3,12 +3,12 @@ import { LinkStyled } from '../styled';
 import { MovieCardWrapper, MovieImg, MovieName } from './styled';
 import routes from '../../constants';
 
-type MovieCardProps = {
+interface MovieCardProps {
   img: string;
   name: string;
-};
+}
 
-const MovieCard = ({ img, name }: MovieCardProps) => {
+const MovieCard: React.FC<MovieCardProps> = ({ img, name }) => {
   return (
     <>
       <LinkStyled to={routes.movie}>

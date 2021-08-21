@@ -1,16 +1,23 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
+// interface ButtonProps {
+//   width: string;
+//   height: string;
+//   backgroundColor: string;
+//   title: string;
+//   fontSize: string;
+// }
 export const Button = styled.button`
-  width: ${(props) => props.width};
-  height: ${(props) => props.height};
+  width: ${({ width }) => width};
+  height: ${({ height }) => height};
   color: #fff;
   opacity: 0.5;
   border: none;
   outline: none;
-  font-size: ${(props) => props.fontSize};
+  font-size: ${({ fontSize }) => fontSize};
   transition: opacity 0.3s;
-  background-color: ${(props) => props.backgroundColor};
+  background-color: ${({ backgroundColor }) => backgroundColor};
   cursor: pointer;
   :hover {
     opacity: 0.8;
