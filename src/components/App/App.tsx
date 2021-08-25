@@ -1,8 +1,6 @@
 import React from 'react';
-import { AppWrapper } from './styled';
+import { AppWrapperStyled } from './styled';
 
-const App: React.FC<{ children: object }> = ({ children }) => {
-  return <AppWrapper>{children}</AppWrapper>;
+export const App: React.FC<{ children: object }> = ({ children }) => {
+  return <AppWrapperStyled>{children}</AppWrapperStyled>;
 };
-
-export default App;

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GenreLinksWrapper = styled.div`
+export const GenreLinksWrapperStyled = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

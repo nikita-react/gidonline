@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const MovieCardWrapper = styled.div`
+export const MovieCardWrapperStyled = styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   display: inline-block;
@@ -13,12 +13,12 @@ export const MovieCardWrapper = styled.div`
     color: #ddd;
   }
 `;
-export const MovieImg = styled.img`
+export const MovieImgStyled = styled.img`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
-  padding: 6px 6px 3px 6px;
+  margin: 6px 6px 3px 6px;
 `;
-export const MovieName = styled.p`
+export const MovieNameStyled = styled.p`
   color: ${({ color }) => color};
   font-size: ${({ fontSize }) => fontSize};
 `;

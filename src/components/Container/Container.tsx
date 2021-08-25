@@ -1,16 +1,38 @@
-import React from 'react';
-import { ContainerWrapper } from './styled';
+import React, { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
+import { getMovies } from '../../store/movies/action';
+
+import {
+  ContainerWrapperStyled,
+  ContainerInnerWrapperStyled,
+  MainMovieWrapperStyled,
+  RecommendedMovieWrapperStyled,
+} from './styled';
 import Header from '../Header';
 import TopMovie from '../TopMovie';
 import GenreLinks from '../GenreLinks';
+import RegistrationLinks from '../RegistrationLinks';
+import RecommendedMovies from '../RecommendedMovies';
 
-const Container: React.FC = () => {
+export const Container: React.FC<{ children: object }> = ({ children }) => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    const getMoviesList = () => dispatch(getMovies());
+    getMoviesList();
+  }, [dispatch]);
+
   return (
-    <ContainerWrapper>
+    <ContainerWrapperStyled>
       <Header />
       <TopMovie />
       <GenreLinks />
-    </ContainerWrapper>
+      <ContainerInnerWrapperStyled>
+        <MainMovieWrapperStyled>{children}</MainMovieWrapperStyled>
+        <RecommendedMovieWrapperStyled>
+          <RegistrationLinks />
+          <RecommendedMovies />
+        </RecommendedMovieWrapperStyled>
+      </ContainerInnerWrapperStyled>
+    </ContainerWrapperStyled>
   );
 };
-export default Container;

@@ -1,30 +1,29 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
 import MovieCard from '../MovieCard';
-import { TopMovieWrapper } from './styled';
-import { getMovies } from '../../store/movies/action';
+import { TopMovieWrapperStyled } from './styled';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 
-const TopMovie: React.FC = () => {
+export const TopMovie: React.FC = () => {
   const { movies } = useTypedSelector((state) => state.movie);
 
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const getMoviesList = () => dispatch(getMovies());
-    getMoviesList();
-  }, [dispatch]);
-
   return (
-    <TopMovieWrapper>
+    <TopMovieWrapperStyled>
       {movies
         .sort((a, b) => b.mark - a.mark)
         .slice(0, 7)
         .map((movie) => (
-          <MovieCard key={movie.id} img={movie.image} name={movie.name} />
+          <MovieCard
+            key={movie.id}
+            img={movie.image}
+            name={movie.name}
+            wrapperWidth={'132px'}
+            wrapperHeight={'207px'}
+            imgWidth={'120px'}
+            imgHeight={'173px'}
+            nameSize={'11px'}
+            nameColor={'#aaa'}
+          />
         ))}
-    </TopMovieWrapper>
+    </TopMovieWrapperStyled>
   );
 };
-
-export default TopMovie;

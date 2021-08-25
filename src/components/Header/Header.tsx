@@ -1,25 +1,25 @@
 import React from 'react';
 import {
-  HeaderWrapper,
-  HeaderImg,
-  HeaderLink,
-  HeaderSearchWrapper,
-  HeaderSearch,
-  HeaderLinksWrapper,
+  HeaderWrapperStyled,
+  HeaderImgStyled,
+  HeaderLinkStyled,
+  HeaderSearchWrapperStyled,
+  HeaderSearchStyled,
+  HeaderLinksWrapperStyled,
 } from './styled';
-import { Button, LinkStyled } from '../styled';
+import { ButtonStyled, LinkStyled } from '../styled';
 import logo from '../../images/gidonline.png';
 import routes from '../../urls';
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
-    <HeaderWrapper>
+    <HeaderWrapperStyled>
       <LinkStyled to={routes.basic.gidonline}>
-        <HeaderImg src={logo} alt={'logo'} />
+        <HeaderImgStyled src={logo} alt={'logo'} />
       </LinkStyled>
-      <HeaderSearchWrapper>
-        <HeaderSearch placeholder={'Название фильма...'} />
-        <Button
+      <HeaderSearchWrapperStyled>
+        <HeaderSearchStyled placeholder={'Название фильма...'} />
+        <ButtonStyled
           width={'105px'}
           height={'31px'}
           backgroundColor={'#333'}
@@ -27,16 +27,20 @@ const Header: React.FC = () => {
           fontSize={'13px'}
         >
           Поиск
-        </Button>
-        <HeaderLinksWrapper>
-          <HeaderLink to={routes.basic.new}>Новинки</HeaderLink>
-          <HeaderLink to={routes.basic.premieres}>Премьеры</HeaderLink>
-          <HeaderLink to={routes.basic.navigator}>Навигатор</HeaderLink>
-          <HeaderLink to={routes.basic.random}>Случайный</HeaderLink>
-        </HeaderLinksWrapper>
-      </HeaderSearchWrapper>
-    </HeaderWrapper>
+        </ButtonStyled>
+        <HeaderLinksWrapperStyled>
+          <HeaderLinkStyled to={routes.basic.new}>Новинки</HeaderLinkStyled>
+          <HeaderLinkStyled to={routes.basic.premieres}>
+            Премьеры
+          </HeaderLinkStyled>
+          <HeaderLinkStyled to={routes.basic.navigator}>
+            Навигатор
+          </HeaderLinkStyled>
+          <HeaderLinkStyled to={routes.basic.random}>
+            Случайный
+          </HeaderLinkStyled>
+        </HeaderLinksWrapperStyled>
+      </HeaderSearchWrapperStyled>
+    </HeaderWrapperStyled>
   );
 };
-
-export default Header;

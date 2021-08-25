@@ -1,2 +1,2 @@
-import GenreLink from './GenreLink';
+import { GenreLink } from './GenreLink';
 export default GenreLink;

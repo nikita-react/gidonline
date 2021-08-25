@@ -1,2 +1,2 @@
-import TopMovie from './TopMovie';
+import { TopMovie } from './TopMovie';
 export default TopMovie;

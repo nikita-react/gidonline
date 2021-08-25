@@ -1,15 +1,15 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapperStyled = styled.div`
   height: 100px;
   padding: 0 100px 0 66px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-export const HeaderImg = styled.img``;
-export const HeaderLink = styled(Link)`
+export const HeaderImgStyled = styled.img``;
+export const HeaderLinkStyled = styled(Link)`
   display: inline-block;
   padding: 0px 3px;
   color: #aaa;
@@ -25,8 +25,8 @@ export const HeaderLink = styled(Link)`
     display: none;
   }
 `;
-export const HeaderSearchWrapper = styled.div``;
-export const HeaderSearch = styled.input`
+export const HeaderSearchWrapperStyled = styled.div``;
+export const HeaderSearchStyled = styled.input`
   outline: none;
   background-color: #080808;
   color: #ddd;
@@ -52,6 +52,6 @@ export const HeaderSearch = styled.input`
     }
   }
 `;
-export const HeaderLinksWrapper = styled.div`
+export const HeaderLinksWrapperStyled = styled.div`
   padding: 5px 0 0 10px;
 `;

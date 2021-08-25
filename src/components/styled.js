@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-export const Button = styled.button`
+export const ButtonStyled = styled.button`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   color: #fff;

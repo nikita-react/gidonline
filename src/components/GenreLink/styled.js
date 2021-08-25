@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const GenreItem = styled.div`
+export const GenreItemStyled = styled.div`
   transition: 0.2s;
   width: 132px;
   height: 27px;
@@ -10,6 +10,10 @@ export const GenreItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  :hover {
+    background-color: #353535;
+    color: #ddd;
+  }
 `;
 
-export const GenreName = styled.span``;
+export const GenreNameStyled = styled.span``;

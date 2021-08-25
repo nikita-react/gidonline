@@ -1,25 +1,40 @@
 import React from 'react';
 import { LinkStyled } from '../styled';
-import { MovieCardWrapper, MovieImg, MovieName } from './styled';
+import {
+  MovieCardWrapperStyled,
+  MovieImgStyled,
+  MovieNameStyled,
+} from './styled';
 import route from '../../urls/index';
 interface MovieCardProps {
   img: string;
   name: string;
+  wrapperWidth: string;
+  wrapperHeight: string;
+  imgWidth: string;
+  imgHeight: string;
+  nameSize: string;
+  nameColor: string;
 }
 
-const MovieCard: React.FC<MovieCardProps> = ({ img, name }) => {
+export const MovieCard: React.FC<MovieCardProps> = (props) => {
   return (
     <>
       <LinkStyled to={route.basic.gidonline}>
-        <MovieCardWrapper width={'132px'} height={'207px'}>
-          <MovieImg width={'120px'} height={'173px'} src={img} />
-          <MovieName fontSize={'11px'} color={'#aaa'}>
-            {name}
-          </MovieName>
-        </MovieCardWrapper>
+        <MovieCardWrapperStyled
+          width={props.wrapperWidth}
+          height={props.wrapperHeight}
+        >
+          <MovieImgStyled
+            width={props.imgWidth}
+            height={props.imgHeight}
+            src={props.img}
+          />
+          <MovieNameStyled fontSize={props.nameSize} color={props.nameColor}>
+            {props.name}
+          </MovieNameStyled>
+        </MovieCardWrapperStyled>
       </LinkStyled>
     </>
   );
 };
-
-export default MovieCard;
