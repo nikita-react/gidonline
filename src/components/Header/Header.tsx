@@ -9,12 +9,12 @@ import {
 } from './styled';
 import { Button, LinkStyled } from '../styled';
 import logo from '../../images/gidonline.png';
-import routes from '../../constants';
+import routes from '../../urls';
 
 const Header: React.FC = () => {
   return (
     <HeaderWrapper>
-      <LinkStyled to={routes.gidonline}>
+      <LinkStyled to={routes.basic.gidonline}>
         <HeaderImg src={logo} alt={'logo'} />
       </LinkStyled>
       <HeaderSearchWrapper>
@@ -29,10 +29,10 @@ const Header: React.FC = () => {
           Поиск
         </Button>
         <HeaderLinksWrapper>
-          <HeaderLink to={routes.new}>Новинки</HeaderLink>
-          <HeaderLink to={routes.premieres}>Премьеры</HeaderLink>
-          <HeaderLink to={routes.navigator}>Навигатор</HeaderLink>
-          <HeaderLink to={routes.random}>Случайный</HeaderLink>
+          <HeaderLink to={routes.basic.new}>Новинки</HeaderLink>
+          <HeaderLink to={routes.basic.premieres}>Премьеры</HeaderLink>
+          <HeaderLink to={routes.basic.navigator}>Навигатор</HeaderLink>
+          <HeaderLink to={routes.basic.random}>Случайный</HeaderLink>
         </HeaderLinksWrapper>
       </HeaderSearchWrapper>
     </HeaderWrapper>

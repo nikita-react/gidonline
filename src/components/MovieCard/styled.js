@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-// interface MovieCardStyled {
-//   width: string;
-//   height: string;
-//   color: string;
-//   fontSize: string;
-// }
-
 export const MovieCardWrapper = styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
@@ -14,6 +7,11 @@ export const MovieCardWrapper = styled.div`
   margin: 2px;
   background-color: #222;
   text-align: center;
+  transition: 0.2s;
+  :hover {
+    background-color: #353535;
+    color: #ddd;
+  }
 `;
 export const MovieImg = styled.img`
   width: ${({ width }) => width};

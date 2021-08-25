@@ -19,7 +19,7 @@ export const getMovies = () => (dispatch: any) => {
   dispatch(moviesRequest);
   api.movies
     .getMovies()
-    .then((res) => {
+    .then((res: Payload[]) => {
       dispatch(moviesSuccess(res));
     })
     .catch(() => dispatch(moviesError()));

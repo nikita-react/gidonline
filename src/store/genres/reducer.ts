@@ -1,10 +1,14 @@
 import { GENRES_REQUEST, GENRES_SUCCESS, GENRES_ERROR } from './constant';
+import { GenreActionTypes, GenrePayload } from './types';
 
-const reducerState = {
+interface GenreState {
+  genres: Array<GenrePayload>;
+}
+const reducerState: GenreState = {
   genres: [],
 };
 
-const genreReducer = (state = reducerState, action) => {
+const genreReducer = (state = reducerState, action: GenreActionTypes) => {
   const { type, payload } = action;
 
   switch (type) {

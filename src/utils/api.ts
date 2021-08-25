@@ -1,14 +1,14 @@
-const BASE_URL = `http://localhost:3004`;
+const BASE_URL: string = `http://localhost:3004`;
 
-const api = {
+const api: { movies: any; genres: any } = {
   movies: {
-    getMovies: () =>
+    getMovies: (): Promise<any> =>
       fetch(`${BASE_URL}/movies`).then((response) => {
         return response.json();
       }),
   },
   genres: {
-    getGenres: () =>
+    getGenres: (): Promise<any> =>
       fetch(`${BASE_URL}/genres`).then((response) => {
         return response.json();
       }),

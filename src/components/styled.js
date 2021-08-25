@@ -1,13 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
-// interface ButtonProps {
-//   width: string;
-//   height: string;
-//   backgroundColor: string;
-//   title: string;
-//   fontSize: string;
-// }
 export const Button = styled.button`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
