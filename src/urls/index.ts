@@ -5,6 +5,7 @@ const routes = {
     premieres: '/premieres',
     navigator: '/navigator',
     random: '/random',
+    pagination: '/page-',
   },
   genres: {
     genre: '/genre/',

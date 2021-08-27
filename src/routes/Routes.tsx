@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import routes from '../urls';
 import App from '../components/App';
@@ -7,6 +7,9 @@ import FilterMovies from '../components/FilterMovies';
 import RenderMovies from '../components/RenderMovies';
 
 const Routes: React.FC = () => {
+  const page = window.location.pathname.split('').pop();
+  const [currentPage, setCurrentPag] = useState<string>(page);
+
   return (
     <BrowserRouter>
       <App>
@@ -17,7 +20,23 @@ const Routes: React.FC = () => {
             component={() => (
               <Container>
                 <FilterMovies />
-                <RenderMovies />
+                <RenderMovies
+                  setCurrentPag={setCurrentPag}
+                  currentPage={currentPage}
+                />
+              </Container>
+            )}
+          />
+          <Route
+            exact
+            path={`${routes.basic.pagination}${page}`}
+            component={() => (
+              <Container>
+                <FilterMovies />
+                <RenderMovies
+                  setCurrentPag={setCurrentPag}
+                  currentPage={currentPage}
+                />
               </Container>
             )}
           />
