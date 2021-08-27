@@ -20,15 +20,19 @@ export const RenderMovies: React.FC<{
   if (isNaN(pageNumber) || window.location.pathname === '/') {
     pageNumber = 1;
   }
-  const moviesPerPage: number = 3;
+  const moviesPerPage: number = 6;
   const lastMoviesIndex: number = pageNumber * moviesPerPage;
   const firstMoviesIndex: number = lastMoviesIndex - moviesPerPage;
-  const currentMovies = movies.slice(firstMoviesIndex, lastMoviesIndex);
+  const currentMovies: Array<any> = movies.slice(
+    firstMoviesIndex,
+    lastMoviesIndex
+  );
 
-  const pageNumbers: Array<number> = [];
-  for (let i = 1; i <= Math.ceil(movies.length / moviesPerPage); i++) {
-    pageNumbers.push(i);
-  }
+  const numberOfPages: number = Math.ceil(movies.length / moviesPerPage);
+  const pageNumbers: Array<number> = Array.from(
+    { length: numberOfPages },
+    (v, k) => k + 1
+  );
 
   const paginate = (number: number) => {
     setCurrentPag(number);
@@ -42,8 +46,10 @@ export const RenderMovies: React.FC<{
             key={movie.id}
             img={movie.image}
             name={movie.name}
+            mark={movie.mark}
+            year={movie.year}
             wrapperWidth={'210px'}
-            wrapperHeight={'350px'}
+            wrapperHeight={'357px'}
             imgWidth={'200px'}
             imgHeight={'300px'}
             nameSize={'13px'}
