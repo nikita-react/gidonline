@@ -5,6 +5,7 @@ import App from '../components/App';
 import Container from '../components/Container';
 import FilterMovies from '../components/FilterMovies';
 import RenderMovies from '../components/RenderMovies';
+import NotFound from '../components/NotFound';
 
 const Routes: React.FC = () => {
   const page = window.location.pathname.split('').pop();
@@ -40,6 +41,7 @@ const Routes: React.FC = () => {
               </Container>
             )}
           />
+          <Route path='*' component={NotFound} />
         </Switch>
       </App>
     </BrowserRouter>
