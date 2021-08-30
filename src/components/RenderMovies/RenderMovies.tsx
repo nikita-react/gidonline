@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { useTypedSelector } from '../../hooks/useTypedSelector';
 import MovieCard from '../MovieCard';
 import routes from '../../urls';
@@ -8,12 +8,18 @@ import {
   PageLink,
 } from './styled';
 import { LinkStyled } from '../styled';
+import Context from '../../hooks/context';
 
 export const RenderMovies: React.FC<{
   setCurrentPag: any;
   currentPage: string;
 }> = ({ setCurrentPag, currentPage }) => {
   const { movies } = useTypedSelector((state) => state.movie);
+  const { filterMovies, setFilterMovies } = useContext(Context);
+
+  useEffect(() => {
+    setFilterMovies(movies);
+  }, [movies, setFilterMovies]);
 
   let pageNumber = Number(currentPage);
 
@@ -23,7 +29,7 @@ export const RenderMovies: React.FC<{
   const moviesPerPage: number = 6;
   const lastMoviesIndex: number = pageNumber * moviesPerPage;
   const firstMoviesIndex: number = lastMoviesIndex - moviesPerPage;
-  const currentMovies: Array<any> = movies.slice(
+  const currentMovies: Array<any> = filterMovies.slice(
     firstMoviesIndex,
     lastMoviesIndex
   );

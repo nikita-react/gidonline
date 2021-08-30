@@ -39,8 +39,8 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
     if (lastNumber === 1) {
       starsArr.push(star_half);
     }
-    if (Number(firstNumber) < 9) {
-      const starOffNumber = 10 - Number(firstNumber) - lastNumber;
+    if (starsArr.length < 10) {
+      const starOffNumber = 10 - starsArr.length;
       for (let i = 1; i <= starOffNumber; i++) {
         starsArr.push(star_off);
       }

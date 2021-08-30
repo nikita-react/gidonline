@@ -1,4 +1,4 @@
 import React from 'react';
 
-const MoviesContext = React.createContext([]);
-export default MoviesContext;
+const Context: any = React.createContext<any>(null);
+export default Context;

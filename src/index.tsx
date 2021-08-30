@@ -4,11 +4,13 @@ import Routes from './routes';
 import { Provider } from 'react-redux';
 import store from './store/index';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Routes />
-    </Provider>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const Main: React.FC<{}> = () => {
+  return (
+    <React.StrictMode>
+      <Provider store={store}>
+        <Routes />
+      </Provider>
+    </React.StrictMode>
+  );
+};
+ReactDOM.render(<Main />, document.getElementById('root'));

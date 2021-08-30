@@ -1,7 +1,4 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getMovies } from '../../store/movies/action';
-
+import React, { useState } from 'react';
 import {
   ContainerWrapperStyled,
   ContainerInnerWrapperStyled,
@@ -13,26 +10,25 @@ import TopMovie from '../TopMovie';
 import GenreLinks from '../GenreLinks';
 import RegistrationLinks from '../RegistrationLinks';
 import RecommendedMovies from '../RecommendedMovies';
+import Context from '../../hooks/context';
 
 export const Container: React.FC<{ children: object }> = ({ children }) => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    const getMoviesList = () => dispatch(getMovies());
-    getMoviesList();
-  }, [dispatch]);
+  const [filterMovies, setFilterMovies] = useState<any>([]);
 
   return (
-    <ContainerWrapperStyled>
-      <Header />
-      <TopMovie />
-      <GenreLinks />
-      <ContainerInnerWrapperStyled>
-        <MainMovieWrapperStyled>{children}</MainMovieWrapperStyled>
-        <RecommendedMovieWrapperStyled>
-          <RegistrationLinks />
-          <RecommendedMovies />
-        </RecommendedMovieWrapperStyled>
-      </ContainerInnerWrapperStyled>
-    </ContainerWrapperStyled>
+    <Context.Provider value={{ filterMovies, setFilterMovies }}>
+      <ContainerWrapperStyled>
+        <Header />
+        <TopMovie />
+        <GenreLinks />
+        <ContainerInnerWrapperStyled>
+          <MainMovieWrapperStyled>{children}</MainMovieWrapperStyled>
+          <RecommendedMovieWrapperStyled>
+            <RegistrationLinks />
+            <RecommendedMovies />
+          </RecommendedMovieWrapperStyled>
+        </ContainerInnerWrapperStyled>
+      </ContainerWrapperStyled>
+    </Context.Provider>
   );
 };
