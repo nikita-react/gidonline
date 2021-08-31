@@ -54,7 +54,7 @@ export const RenderMovies: React.FC<{
             name={movie.name}
             mark={movie.mark}
             year={movie.year}
-            wrapperWidth={'210px'}
+            wrapperWidth={'212px'}
             wrapperHeight={'357px'}
             imgWidth={'200px'}
             imgHeight={'300px'}

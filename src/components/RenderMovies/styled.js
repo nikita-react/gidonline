@@ -5,7 +5,7 @@ export const RenderMoviesWrapperStyled = styled.div`
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  margin-left: 4px;
+  margin-left: -2px;
 `;
 export const RenderPageLinksWrapperStyled = styled.div`
   display: flex;

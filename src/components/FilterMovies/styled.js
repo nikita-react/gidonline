@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const FilterMoviesWrapperStyled = styled.div`
   height: 20px;
+  width: 100%;
   max-width: 644px;
   background-color: #191919;
   color: #999;
-  margin: 2px 2px 4px 6px;
+  margin: 0px 0px 4px 0px;
   display: flex;
   flex-direction: row;
   font-size: 12px;
@@ -31,10 +32,11 @@ export const OptionStyled = styled.option``;
 export const FilterItemStyled = styled.span``;
 
 export const FilterBestMoviesWrapperStyled = styled.div`
-  max-width: 650px;
+  /* width: 650px; */
+  width: 100%;
   height: 22px;
   background-color: #181818;
-  margin: 0px 0px 4px 6px;
+  margin: 0px 0px 4px 0px;
   font-size: 11px;
   color: #777;
   display: flex;

@@ -17,7 +17,7 @@ export const GenreLink: React.FC<GenreLinkProps> = ({ name, url }) => {
     e.preventDefault();
     const filterMovies: Array<object> = [];
     movies.forEach((movie) =>
-      movie.genre.map((genre) => {
+      movie.genre.forEach((genre) => {
         if (genre.toLowerCase() === name) {
           filterMovies.push(movie);
         }
