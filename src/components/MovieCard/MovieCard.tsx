@@ -1,5 +1,5 @@
-import React from 'react';
-import { LinkStyled } from '../styled';
+import React from "react";
+import { LinkStyled } from "../styled";
 import {
   MovieCardWrapperStyled,
   MovieImgStyled,
@@ -7,11 +7,11 @@ import {
   StarsWrapperStyled,
   StarsImgStyled,
   YearStyled,
-} from './styled';
-import route from '../../urls/index';
-import star from '../../images/star.png';
-import star_off from '../../images/star-off.png';
-import star_half from '../../images/star_half.png';
+} from "./styled";
+import route from "../../urls/index";
+import star from "../../images/star.png";
+import star_off from "../../images/star-off.png";
+import star_half from "../../images/star_half.png";
 
 interface MovieCardProps {
   img: string;
@@ -24,13 +24,15 @@ interface MovieCardProps {
   nameColor: string;
   mark?: number;
   year?: number;
+  backgroundColor?: string;
+  margin?: string;
 }
 
 export const MovieCard: React.FC<MovieCardProps> = (props) => {
   const starsArr: Array<string> = [];
 
-  if (typeof props.mark === 'number') {
-    const arrMark = String(props.mark).split('.');
+  if (typeof props.mark === "number") {
+    const arrMark = String(props.mark).split(".");
     const firstNumber = arrMark.shift();
     const lastNumber = Math.round(Number(`0.${arrMark.pop()}`));
     for (let i = 1; i <= Number(firstNumber); i++) {
@@ -53,6 +55,8 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
         <MovieCardWrapperStyled
           width={props.wrapperWidth}
           height={props.wrapperHeight}
+          backgroundColor={props.backgroundColor}
+          margin={props.margin}
         >
           <MovieImgStyled
             width={props.imgWidth}

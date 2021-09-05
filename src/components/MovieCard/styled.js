@@ -1,11 +1,12 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const MovieCardWrapperStyled = styled.div`
   width: ${({ width }) => width};
   height: ${({ height }) => height};
   display: inline-block;
-  margin: 2px;
-  background-color: #222;
+  margin: ${({ margin }) => (margin ? margin : "2px")};
+  background-color: ${({ backgroundColor }) =>
+    backgroundColor ? backgroundColor : "#222"};
   text-align: center;
   transition: 0.2s;
   position: relative;
