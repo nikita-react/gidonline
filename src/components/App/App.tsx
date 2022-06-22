@@ -9,6 +9,5 @@ export const App: React.FC<{ children: object }> = ({ children }) => {
     const getMoviesList = () => dispatch(getMovies());
     getMoviesList();
   }, [dispatch]);
-  //new chabges
   return <AppWrapperStyled>{children}</AppWrapperStyled>;
 };
