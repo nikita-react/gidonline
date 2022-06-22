@@ -17,6 +17,7 @@ export const RecommendedMovies: React.FC<{}> = () => {
       <MovieWrapperStyled>
         {movies.slice(0, 6).map((movie) => (
           <MovieCard
+            id={movie.id}
             key={movie.id}
             img={movie.image}
             name={movie.name}

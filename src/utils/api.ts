@@ -6,6 +6,10 @@ const api: { movies: any; genres: any } = {
       fetch(`${BASE_URL}/movies`).then((response) => {
         return response.json();
       }),
+    getOneMovies: (id: any): Promise<any> =>
+      fetch(`${BASE_URL}/movies/${id}`).then((response) => {
+        return response.json();
+      }),
   },
   genres: {
     getGenres: (): Promise<any> =>

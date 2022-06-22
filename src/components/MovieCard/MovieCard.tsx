@@ -8,13 +8,14 @@ import {
   StarsImgStyled,
   YearStyled,
 } from "./styled";
-import route from "../../urls/index";
+import routes from "../../urls/index";
 import star from "../../images/star.png";
 import star_off from "../../images/star-off.png";
 import star_half from "../../images/star_half.png";
 
 interface MovieCardProps {
   img: string;
+  id: number;
   name: string;
   wrapperWidth: string;
   wrapperHeight: string;
@@ -51,7 +52,7 @@ export const MovieCard: React.FC<MovieCardProps> = (props) => {
 
   return (
     <>
-      <LinkStyled to={route.basic.gidonline}>
+      <LinkStyled to={`${routes.basic.movie}/${props.id}`}>
         <MovieCardWrapperStyled
           width={props.wrapperWidth}
           height={props.wrapperHeight}
